@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Kizigenza Car Rental</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles for About Us Page */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .about-section {
+            background-color: #f9f9f9; /* Light grey background */
+            padding: 50px 0;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        .about-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-info {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666666;
+        }
+        .logo img {
+            max-width: 100px; /* Adjust the logo width */
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li {
+            margin-right: 20px;
+        }
+
+        .nav-links ul li:last-child {
+            margin-right: 0;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;}
+
+
+        .btn-custom {
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .logout-btn {
+            margin-right: 20px; /* Adjust the right margin */
+        }
+
+
+        .header-container {
+            background-color: #292828; /* Grey color */
+            color: #fff; /* Text color */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .site-footer {
+            background-color: #292828; /* Grey color */
+            color: #fff; /* Text color */
+            display: flex;
+            padding: 20px;
+            /*text-align: center;*/
+            margin-bottom: 0px;;
+        }
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.btn-outline-secondary {
+            border: 1px solid #0056b3; /* Blue border */
+            background-color: #0056b3; /* Blue background */
+            color: #fff; /* White text */
+        }
+
+        .btn.btn-outline-secondary:hover {
+            background-color: #004080; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Your header content -->
+    <div class="header-container">
+        <div class="logo">
+            <img src="/images/logo2.PNG">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a th:href="@{/about}">About Us</a></li>
+                <li><a th:href="@{/contact}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logout-btn">
+            <!-- Add your logout button here -->
+            <a th:href="@{/login}" class="btn btn-sm btn-outline-secondary">Login</a>
+            <a th:href="@{/signup}" class="btn btn-sm btn-outline-secondary">Sign Up</a>
+        </div>
+    </div>
+</header>
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-title">
+                <h2>About Kizigenza Car Rental</h2>
+            </div>
+            <div class="about-info">
+                <p>Kizigenza Car Rental is a renowned car rental company based in Kigali. We provide an extensive fleet of vehicles for rental purposes, catering to various needs and preferences of our clients.</p>
+                <p>Our car renting services encompass a wide range of vehicles, including sedans, SUVs, trucks, and luxury cars, all maintained in top-notch condition to ensure a comfortable and safe ride for our customers.</p>
+                <p>In addition to car renting, we also specialize in car selling, offering a diverse selection of quality pre-owned vehicles at competitive prices. Our aim is to provide reliable and affordable options to meet the diverse needs of our customers.</p>
+                <p>Moreover, we excel in car repairing services, with a team of skilled technicians and state-of-the-art facilities, ensuring efficient and effective repairs for all makes and models of vehicles.</p>
+                <p>Furthermore, our transportation services are tailored to accommodate both individual and group travel requirements, ensuring convenience and comfort while traversing various routes in and around Kigali.</p>
+                <p>Additionally, at Kizigenza Car Rental, our values revolve around offering more than just vehicles; we are committed to delivering outstanding customer service. Our dedicated team strives to go above and beyond in assisting our clients, providing personalized attention and ensuring that their rental experience exceeds expectations.</p>
+                <p>We believe that excellent customer care is the cornerstone of our success. From the moment our customers connect with us, throughout their rental journey, and even after, we prioritize their needs, concerns, and comfort. Our commitment to exceptional service extends beyond providing vehicles; it's about fostering lasting relationships built on trust, reliability, and unmatched support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <!-- Your footer content -->
+    <div class="footer-container">
+        <nav class="nav-links">
+            <p style="text-align: center;">&copy;All rights reserved 2023 Kizigenza Rental car</p>
+            <p style="text-align: center;"><i>don't dream it, drive it</i></p>
+        </nav>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="css/styles2.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="path/to/your/script.js"></script>
+</head>
+<header>
+    <!-- Your header content -->
+    <div class="header-container">
+        <div class="logo">
+            <img src="/images/logo2.PNG">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/about}">About Us</a></li>
+                <li><a th:href="@{/contact}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logout-btn">
+            <!-- Add your logout button here -->
+            <a th:href="@{/logout}" class="btn btn-sm btn-outline-secondary">Logout</a>
+        </div>
+    </div>
+</header>
+<body>
+<main>
+    <div class="container">
+        <h1>Available Cars</h1>
+        <div class="row">
+            <div th:each="car : ${cars}" class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img th:src="${car.image}" class="card-img-top" alt="Car Image" width="200" height="200">
+                    <div class="card-body">
+
+                        <p class="card-text" th:text="${car.plateNumber + ' - ' + car.model + ' - ' + car.year}"></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a th:href="@{'/car/book/' + ${car.plateNumber}}" class="btn btn-sm btn-outline-secondary">Book</a>
+                                <a th:href="@{'/car/details/' + ${car.plateNumber}}" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<footer>
+    <!-- Your footer content -->
+    <div class="footer-container">
+        <nav class="nav-links">
+            <ul>
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/about}">About Us</a></li>
+                <li><a th:href="@{/contact}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logout-btn-1">
+            <!-- Add your logout button here -->
+            <a th:href="@{/logout}" class="btn btn-sm btn-outline-secondary">Logout</a>
+        </div>
+    </div>
+</footer>
+</html>

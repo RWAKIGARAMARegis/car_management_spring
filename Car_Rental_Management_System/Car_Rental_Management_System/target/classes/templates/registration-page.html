@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 20px;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        nav ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ol li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size:29px;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <nav>
+        <ol>
+            <li><a href="customer-dashboard.html">Home</a></li>
+            <li><a href="admin-dashboard.html">Display</a></li>
+            <li><a href="registration-page.html">Register</a></li>
+        </ol>
+    </nav>
+</div>
+<h1>Car Registration Form</h1>
+<form action="/register" method="POST" enctype="multipart/form-data">
+    <label>Plate Number</label>
+    <input type="text"  name="plateNumber" required><br>
+    <label>Model</label>
+    <input type="text" name="model" required><br>
+    <label>Image</label>
+    <input type="file" name="file" required><br>
+    <label>Year</label>
+    <input type="text" name="year" required><br>
+    <label>Status of car</label>
+    <select name="available" class="select">
+        <option value="Booked">Booked</option>
+        <option value="Available">Available</option>
+    </select><br>
+    <label>Customer ID</label>
+    <select name="customerId">
+        <option value="">null</option>
+        <!-- Thymeleaf iteration to generate options -->
+        <th:block th:each="customer : ${customers}">
+            <option th:value="${customer.id}" th:text="${customer.id}"></option>
+        </th:block>
+    </select><br>
+    <button type="submit">Register</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMIN DASHBOARD</title>
+    <link href="css/styles1.css" rel="stylesheet" type="text/css" media="all" />
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <style>
+        /* Add your custom styles here */
+        /* ... */
+    </style>
+</head>
+<header>
+    <!-- Your header content -->
+    <div class="header-container">
+        <div class="logo">
+            <img src="/images/logo2.PNG">
+        </div>
+        <div class="text-1">
+            <p>Admin Dashboard</p>
+        </div>
+        <div class="logout-btn">
+            <a th:href="@{/login}" class="btn btn-sm btn-outline-secondary">Logout</a>
+        </div>
+    </div>
+</header>
+<body>
+    <div class="container">
+    <h1 class="text-center">Registered Cars List</h1>
+    <div class="row">
+        <button class="register-car" th:attr="onclick='window.location.href=\'/registration\''">
+            Register Car
+        </button>
+    </div>
+    <div>
+        <table class="table">
+            <!-- Table header -->
+            <thead>
+            <tr>
+                <th>Car Id</th>
+                <th>Plate Number</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>image</th>
+                <th>Available</th>
+                <th>customer Id</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <!-- Table body -->
+            <tbody>
+            <!-- Loop through cars and display each row -->
+            <!-- Car data comes from Thymeleaf 'cars' variable -->
+            <tr th:each="car : ${cars}">
+                <!-- Display car details -->
+                <td th:text="${car.id}"></td>
+                <td th:text="${car.plateNumber}"></td>
+                <td th:text="${car.model}"></td>
+                <td th:text="${car.year}"></td>
+                <td th:field="${car.image}"></td>
+                <td th:text="${car.available}"></td>
+                <td th:text="${car.customer}"></td>
+                <td>
+                    <!-- Buttons for edit and delete actions -->
+                    <a th:href="@{'/edit/' + ${car.plateNumber}}">Edit</a>
+                    <a th:href="@{'/delete/' + ${car.plateNumber}}">Delete</a>
+                </td>
+            </tr>
+            <!-- Show message if no cars are registered -->
+            <tr th:if="${#lists.isEmpty(cars)}">
+                <td colspan="5">No cars registered</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Registered Users List</h1>
+        <div class="row">
+            <button class="register-user" th:attr="onclick='window.location.href=\'/signup\''">
+                Register User
+            </button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <!-- Table header -->
+                <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <!-- Table body -->
+                <tbody>
+                <!-- Loop through cars and display each row -->
+                <!-- Car data comes from Thymeleaf 'cars' variable -->
+                <tr th:each="customer : ${customers}">
+                    <!-- Display car details -->
+                    <td th:text="${customer.id}"></td>
+                    <td th:text="${customer.username}"></td>
+                    <td th:text="${customer.password}"></td>
+                    <td th:text="${customer.email}"></td>
+                    <td th:text="${customer.type}"></td>
+                    <td>
+                        <!-- Buttons for edit and delete actions -->
+                        <a th:href="@{'/edit/' + ${customer.id}}">Edit</a>
+                        <a th:href="@{'/delete/' + ${customer.id}}">Delete</a>
+                    </td>
+                </tr>
+                <!-- Show message if no cars are registered -->
+                <tr th:if="${#lists.isEmpty(customers)}">
+                    <td colspan="5">No Users registered</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Registered Rentals List</h1>
+        <div class="row">
+            <button class="register-rental" th:attr="onclick='window.location.href=\'/signup\''">
+                Register Rental
+            </button>
+        </div>
+        <div class="row">
+            <table class="table">
+                <!-- Table header -->
+                <thead>
+                <tr>
+                    <th>Rental Id</th>
+                    <th>car</th>
+                    <th>customer</th>
+                    <th>rental Date</th>
+                    <th>return Date</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <!-- Table body -->
+                <tbody>
+                <!-- Loop through cars and display each row -->
+                <!-- Car data comes from Thymeleaf 'cars' variable -->
+                <tr th:each="rent : ${rent}">
+                    <!-- Display car details -->
+                    <td th:text="${rent.id}"></td>
+                    <td th:text="${rent.car}"></td>
+                    <td th:text="${rent.rentalday}"><td>
+                    <td th:text="${rent.rentalDate}"></td>
+                    <td>
+                        <!-- Buttons for edit and delete actions -->
+                        <a th:href="@{'/edit/' + ${customer.id}}">Edit</a>
+                        <a th:href="@{'/delete/' + ${customer.id}}">Delete</a>
+                    </td>
+                </tr>
+                <!-- Show message if no cars are registered -->
+                <tr th:if="${#lists.isEmpty(customers)}">
+                    <td colspan="5">No Rentals registered</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+    <!-- Your footer content -->
+    <div class="footer-container">
+        <nav class="nav-links">
+            <p>&copy;All rights reserved 2023 Kizigenza Rental car</p>
+            <p><i>don't dream it, drive it</i></p>
+        </nav>
+    </div>
+</footer>
+</html>

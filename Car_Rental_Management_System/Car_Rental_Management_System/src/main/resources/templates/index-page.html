@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background-image: url('/images/backgroundPic2.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+        }
+        p{
+            text-decoration-color: black;
+        }
+
+        .logo img {
+            max-width: 100px; /* Adjust the logo width */
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li {
+            margin-right: 20px;
+        }
+
+        .nav-links ul li:last-child {
+            margin-right: 0;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;}
+
+
+            .btn-custom {
+            margin-top: 20px;
+            margin-right: 10px;
+            }
+        .logout-btn {
+            margin-right: 20px; /* Adjust the right margin */
+        }
+
+
+        /* Header and Footer Styles */
+        /*.site-header,*/
+        /*.site-footer {*/
+        /*    background-color: #292828; !* Grey color *!*/
+        /*    color: #464444; !* Text color *!*/
+        /*}*/
+
+        .header-container {
+            background-color: #292828; /* Grey color */
+            color: #fff; /* Text color */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .site-footer {
+            background-color: #292828; /* Grey color */
+            color: #fff; /* Text color */
+            display: flex;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 0px;;
+        }
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.btn-outline-secondary {
+            border: 1px solid #0056b3; /* Blue border */
+            background-color: #0056b3; /* Blue background */
+            color: #fff; /* White text */
+        }
+
+        .btn.btn-outline-secondary:hover {
+            background-color: #004080; /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <!-- Your header content -->
+    <div class="header-container">
+        <div class="logo">
+            <img src="/images/logo2.PNG">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a th:href="@{/about}">About Us</a></li>
+                <li><a th:href="@{/contact}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="logout-btn">
+            <!-- Add your logout button here -->
+            <a th:href="@{/login}" class="btn btn-sm btn-outline-secondary">Login</a>
+            <a th:href="@{/signup}" class="btn btn-sm btn-outline-secondary">signup</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <p><h1>Welcome to KIZIGENZA CAR RENTAL</h1></p>
+        <p><i>don't dream it, drive it</i></p>
+        <a href="/login" class="btn btn-primary btn-custom">Login</a>
+        <a href="/signup" class="btn btn-secondary btn-custom">Sign Up</a>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy;All rights reserved 2023 Kizigenza Rental car</p>
+        <p><i>don't dream it, drive it</i></p>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

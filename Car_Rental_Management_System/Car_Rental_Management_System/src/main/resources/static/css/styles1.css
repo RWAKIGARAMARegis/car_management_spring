@@ -1,0 +1,147 @@
+/* styles1.css */
+
+/* Reset default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: #292828;
+    color: #fff;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    text-align: center; /* Center text */
+}
+
+.nav-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make the list items display horizontally */
+}
+
+.nav-links ul li {
+    margin-right: 20px;
+}
+
+.nav-links ul li:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
+}
+
+.logout-btn {
+    margin-left: auto;
+    color: #fff;
+    text-decoration-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Center text-1 */
+.text-1 {
+    text-align: center;
+}
+
+/* Main content styles */
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align content in the center horizontally */
+}
+.container > div {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.container > div:not(:last-child) {
+    margin-bottom: 40px;
+}
+.container .register-rental,
+.container .register-user,
+.container .register-car {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.container .register-rental:hover,
+.container .register-user:hover,
+.container .register-car:hover {
+    background-color: #004080;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /*margin-bottom: 20px;*/
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Set background color for header row */
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Apply hover effect on table rows */
+table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Button styles within table cells */
+table td a {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0056b3;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+table td a:hover {
+    background-color: #004080;
+}
+
+/* Footer styles */
+footer {
+    background-color: #292828;
+    color: #f6f6fa;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+}
+.footer-container p {
+    margin-bottom: 10px; /* Adjust the margin between paragraphs */
+}
